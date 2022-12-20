@@ -730,6 +730,8 @@ class SentenceTransformer(nn.Sequential):
                     if not skip_scheduler:
                         scheduler.step()
 
+                    del features, labels, loss_value
+
                 training_steps += 1
                 global_step += 1
 
